@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+    
+<bean id="triangle" class="org.spurthi.geek.Triangle">
+<property name="pointA" ref="pointX"/>
+
+<property name="pointB" >
+ <bean id="pointY" class="org.spurthi.geek.Point">
+    <property name="x" value="1"/>
+    <property name="y" value="1"/>
+ </bean>
+</property>
+
+<property name="pointC" >
+    <bean id="pointZ" class="org.spurthi.geek.Point">
+       <property name="x" value="0"/>
+       <property name="y" value="0"/>
+    </bean>
+</property>
+
+</bean>
+
+
+
+
+<bean id="pointX" class="org.spurthi.geek.Point">
+<property name="x" value="2"/>
+<property name="y" value="2"/>
+</bean>
+
+
+
+</beans>
