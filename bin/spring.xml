@@ -7,29 +7,25 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-4.1.xsd">
     
-<bean id="triangle" class="org.spurthi.geek.Triangle">
-<property name="pointA" ref="pointX"/>
+<bean id="triangle" class="org.spurthi.geek.Triangle" autowire="byName">
 
-<property name="pointB" >
- <bean id="pointY" class="org.spurthi.geek.Point">
-    <property name="x" value="1"/>
-    <property name="y" value="1"/>
- </bean>
-</property>
-
-<property name="pointC" >
-    <bean id="pointZ" class="org.spurthi.geek.Point">
-       <property name="x" value="0"/>
-       <property name="y" value="0"/>
-    </bean>
-</property>
 
 </bean>
 
 
+<bean id="pointA" class="org.spurthi.geek.Point">
+       <property name="x" value="0"/>
+       <property name="y" value="0"/>
+ </bean>
 
 
-<bean id="pointX" class="org.spurthi.geek.Point">
+<bean id="pointB" class="org.spurthi.geek.Point">
+    <property name="x" value="1"/>
+    <property name="y" value="1"/>
+ </bean>
+
+
+<bean id="pointC" class="org.spurthi.geek.Point">
 <property name="x" value="2"/>
 <property name="y" value="2"/>
 </bean>
